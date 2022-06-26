@@ -13,7 +13,7 @@
 #
 ARG REPOSITORY="https://github.com/zachallaun/flytail"
 
-ARG BUILDER_IMAGE="hexpm/elixir:1.13.4-erlang-24.3.3-ubuntu-focal-20211006"
+ARG BUILDER_IMAGE="hexpm/elixir:1.13.4-erlang-25.0.2-ubuntu-focal-20211006"
 ARG RUNNER_IMAGE="ubuntu:focal-20211006"
 
 FROM ${BUILDER_IMAGE} as builder
