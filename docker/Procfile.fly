@@ -1,0 +1,3 @@
+tailscaled: tailscaled --verbose=1 --port 41641
+tailscaleup: /app/docker/tailscale-up.sh
+app: /app/docker/wait-for-tailscale.sh gosu nobody /app/bin/server
