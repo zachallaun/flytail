@@ -50,7 +50,7 @@ echo "Done waiting!"
 
 tailscale up \
   "--authkey=${TAILSCALE_AUTHKEY}" \
-  "--hostname=CHANGEME-${FLY_REGION}" \
+  "--hostname=${TAILSCALE_MACHINE_NAME:-changeme}-${FLY_REGION}" \
   --accept-routes=true \
   --ssh
 
