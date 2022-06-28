@@ -10,7 +10,8 @@ defmodule Flytail.MixProject do
       compilers: [:gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      releases: releases()
     ]
   end
 
@@ -59,6 +60,16 @@ defmodule Flytail.MixProject do
     [
       setup: ["deps.get"],
       "assets.deploy": ["esbuild default --minify", "phx.digest"]
+    ]
+  end
+
+  defp releases do
+    [
+      flytail: [
+        include_executables_for: [:unix],
+        applications: [runtime_tools: :permanent],
+        cookie: "TEST-COOKIE-VERY-SECURE"
+      ]
     ]
   end
 end
